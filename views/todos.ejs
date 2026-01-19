@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,33 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-        <li class='todoItem' data-id='<%=el._id%>'>
-            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-            <span class='del'> Delete </span>
-        </li>
-    <% }) %>    
-    </ul>
-
-    <h2>Things left to do: <%= left %></h2>
-
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
-
+    <div class="grocery-list-container">
+        <div class="grocery-list">
+             <div class="grocery-form">
+            <h1>Grocery List</h1>
+            <h2>Things left to do: <%= left %></h2>
+           
+                <form action="/todos/createTodo" method='POST'>
+                    <input class="grocery-input" type="text" placeholder="Enter Grocery Item..." name='todoItem'>
+                    <div class="submit-btn">
+            <button>Submit</button>
+          </div>
+                </form>
+            </div>
+        </div>
+        
+        <ul>
+            <% todos.forEach( el=> { %>
+                <li class='todoItem' data-id='<%=el._id%>'>
+                    <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
+                    <span class='del'> Delete </span>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

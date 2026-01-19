@@ -68,7 +68,7 @@ body {
 .grocery-list {
     position: fixed;
     background-color: #ffffff;
-    top: 0;
+    top: 0px;
     left: 0px;
     right: 0px;
 }
@@ -127,7 +127,7 @@ input {
     padding: 8px;
 }
 
-.button {
+button {
     display: flex;
     flex-direction: column;
     align-content: center;
