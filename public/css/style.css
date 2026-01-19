@@ -115,6 +115,7 @@ input {
 
 .not {
     text-decoration: underline;
+    font-size: 24px;
 }
 
 .search-input {

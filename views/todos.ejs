@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,9 +17,7 @@
            
                 <form action="/todos/createTodo" method='POST'>
                     <input class="grocery-input" type="text" placeholder="Enter Grocery Item..." name='todoItem'>
-                    <div class="submit-btn">
-            <button>Submit</button>
-          </div>
+                    <input class="submit-btn" type="submit">
                 </form>
             </div>
         </div>
@@ -29,7 +26,7 @@
             <% todos.forEach( el=> { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
                     <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
-                    <span class='del'> Delete </span>
+                    <span class='del'> <img src="/images/trash-can.png" alt="delete trash can" </span>
                 </li>
                 <% }) %>
         </ul>
