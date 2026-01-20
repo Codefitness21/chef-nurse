@@ -6,7 +6,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: #e10f0f;
+    background-color: #ff0000;
     height: 50px;
     width: 100%;
 }
@@ -133,6 +133,7 @@ button {
     flex-direction: column;
     align-content: center;
     align-items: center;
+    border-radius: 4px;
     width: 100%;
 }
 
@@ -144,6 +145,7 @@ button {
     font-size: 16px;
     font-weight: bold;
     border-radius: 4px;
+    width: 50%;
     margin: 8px 0 0 0;
 }
 
@@ -170,6 +172,7 @@ button {
     h1 {
         color: #ffffff;
         text-align: center;
+        margin: 0;
     }
 }
 
@@ -181,6 +184,7 @@ button {
     margin: 32px;
     font-size: 16px;
     padding: 8px 16px;
+    width: 50%;
 }
 
 
@@ -190,6 +194,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
     align-items: center;
+    cursor: pointer;
     position: fixed;
     bottom: 0;
     left: 0;
