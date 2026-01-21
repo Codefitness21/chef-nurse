@@ -1,3 +1,5 @@
+//Mongoose is helping us talk to our database.
+
 const mongoose = require('mongoose')
 
 const TodoSchema = new mongoose.Schema({

@@ -1,5 +1,6 @@
 const Todo = require('../models/Todo')
 
+//Todo represents the controller
 module.exports = {
     getTodos: async (req,res)=>{
         try{
