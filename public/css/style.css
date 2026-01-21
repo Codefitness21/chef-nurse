@@ -34,7 +34,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     flex: 1;
-    background-image: url(/images/kitchen-bkgrd.webp);
+    background-image: url('/images/kitchen-bkgrd.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
