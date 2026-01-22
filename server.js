@@ -6,10 +6,13 @@ const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
 const todoRoutes = require('./routes/todos')
 
+
 // const MongoClient = require('mongodb').MongoClient
 require('dotenv').config({path: './config/.env'})
 
+
 connectDB()
+
 
 //Set Templating Engine
 app.use(expressLayouts)
