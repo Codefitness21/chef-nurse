@@ -11,22 +11,27 @@
 <body>
     <div class="grocery-list-container">
         <div class="grocery-list">
-             <div class="grocery-form">
-            <h1>Grocery List</h1>
-            <h2>Things left to do: <%= left %></h2>
-           
+            <div class="grocery-form">
+                <h1>Grocery List</h1>
+                <h2>Things left to do: <%= left %>
+                </h2>
+
                 <form action="/todos/createTodo" method='POST'>
                     <input class="grocery-input" type="text" placeholder="Enter Grocery Item..." name='todoItem'>
                     <input class="submit-btn" type="submit">
                 </form>
             </div>
         </div>
-        
+
         <ul>
             <% todos.forEach( el=> { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
                     <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
-                    <span class='del'> <img src="/images/trash-can.png" alt="delete trash can" </span>
+                    <!-- <span class='counter'> <img src="" alt="number counter" </span>-->
+                    <!-- <div class='icons'> -->
+                        <!-- <span class='edit'> <img src="/images/edit-pencil.png" alt="edit pencil"> </span> -->
+                        <span class='del'> <img src="/images/trash-can.png" alt="delete trash can"></span>
+                    <!-- </div> -->
                 </li>
                 <% }) %>
         </ul>
