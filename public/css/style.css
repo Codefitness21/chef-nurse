@@ -38,7 +38,7 @@ h2 {
 }
 
 h5 {
-   font-size: 1em;
+    font-size: 1em;
     color: #ffffff;
 }
 
@@ -147,6 +147,7 @@ ul {
 li {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 12px 0 0 0;
 }
 
@@ -181,13 +182,12 @@ input {
 .completed {
     text-decoration: line-through;
     color: gray;
-     width: 15%;
+    width: 15%;
 }
 
 .not {
-    text-decoration: underline;
-    font-size: 24px;
-     width: 15%;
+    font-size: 1.2em;
+    width: 75%;
 }
 
 .search-input {
@@ -221,22 +221,58 @@ button {
     margin: 8px 0 0 0;
 }
 
-.del {
+.editForm {
     display: flex;
     flex-direction: row;
-     justify-content: flex-end;
-     gap: 24px;
-     width: 75%;
+    align-self: center;
+    gap: 8px;
+    padding: 0;
 }
 
-/* .edit img {
-    width: 24px;
-} */
+.edit-input {
+    width: 32%;
+}
 
+.edit-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    img {
+ width: 10%;
+    }
+}
+
+.cancel {
+     background-color: #ffffff;
+     color: #000000;
+}
+    
+.del {
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 .del img {
-    width: 20px;
+   width: 18px;
+    margin-right: 16px;
 }
+
+.edit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    /* width: 50%; */
+}
+
+.edit img {
+    width: 24px;
+    margin-right: 16px;
+}
+
 
 /* Footer */
 footer {

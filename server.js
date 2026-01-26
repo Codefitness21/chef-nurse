@@ -38,6 +38,11 @@ app.get('', (req, res)=> {
     res.render('todos')
 })
 
+app.put('', (req, res)=> {
+    res.render('todos')
+})
+
+
 //Listening to port 8000
 app.listen(process.env.PORT, ()=> {
     console.log('listening on 8000')

@@ -24,14 +24,22 @@
         </div>
 
         <ul>
+
             <% todos.forEach( el=> { %>
+
                 <li class='todoItem' data-id='<%=el._id%>'>
-                    <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
-                    <!-- <span class='counter'> <img src="" alt="number counter" </span>-->
-                    <!-- <div class='icons'> -->
-                        <!-- <span class='edit'> <img src="/images/edit-pencil.png" alt="edit pencil"> </span> -->
-                        <span class='del'> <img src="/images/trash-can.png" alt="delete trash can"></span>
-                    <!-- </div> -->
+                    <span class='todoText <%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
+                    <form class="editForm" action="/todos/editTodo" method='PUT' style="display: none;">
+<div class="edit-icons">
+                        <input class="edit-input" type="text" name='updatedText' value="<%= el.todo %>">
+
+                        
+                            <img class="save" src="/images/square.png">
+                            <img class="cancel" src="/images/cancel.png">
+                        </div>
+                    </form>
+                    <span class='edit'> <img src="/images/edit-pencil.png" alt="edit pencil"></span>
+                    <span class='del'> <img src="/images/trash-can.png" alt="delete trash can"></span>
                 </li>
                 <% }) %>
         </ul>
