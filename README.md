@@ -10,3 +10,6 @@
 
 
 ## Lessons Learned:
+
+
+<img style="display: flex; flex-direction: row; justify-content: center;">
