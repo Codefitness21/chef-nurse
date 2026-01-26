@@ -6,6 +6,6 @@
 
 ## How It's Made:
 
-## How It's Made:
+## Optimizations:
 
 ## Lessons Learned:
