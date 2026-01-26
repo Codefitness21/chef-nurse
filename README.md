@@ -1,6 +1,6 @@
 # chef-nurse
 
-<div align="center" margin-right="80px">
+<div align="center" padding-right="80px">
 <img src="public/images/recipe-image.png" alt="Recipe Image" width="300" /><img src="public/images/new-recipe-book.png" alt="Create Recipe Image" width="300" /><img src="public/images/grocery-list.png" alt="Grocery List Image" width="300" /><img src="public/images/grocery-edit.png" alt="Grocery List Image" width="300" />
 </div>
 
