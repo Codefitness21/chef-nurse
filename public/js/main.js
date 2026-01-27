@@ -18,6 +18,7 @@ function editTodo(){
     editForm.style.display = 'block';
 }
 })
+
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
 })
