@@ -15,9 +15,10 @@ function editTodo(){
     const editForm = todoItem.querySelector('.editForm');
 
     todoText.style.display = 'none';
-    editForm.style.display = 'block';
+    editForm.style.display = 'inline';
 }
 })
+
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
@@ -48,8 +49,6 @@ async function editTodo(){
         console.log(err)
     }
 }
-
-
 
 async function deleteTodo(){
     const todoId = this.parentNode.dataset.id
