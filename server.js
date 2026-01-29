@@ -42,6 +42,10 @@ app.put('', (req, res)=> {
     res.render('todos')
 })
 
+app.put('/saveTodo', (req, res)=>{
+    res.render('todos')
+})
+
 
 //Listening to port 8000
 app.listen(process.env.PORT, ()=> {
