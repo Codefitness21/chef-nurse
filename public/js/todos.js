@@ -2,7 +2,8 @@ const deleteBtn = document.querySelectorAll(".del");
 const editBtn = document.querySelectorAll(".edit");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
-const saveBtn = document.querySelector(".save").addEventListener('click', saveTodo);
+const saveBtn = document.querySelectorAll(".save");
+
 
 Array.from(editBtn).forEach((el) => {
   el.addEventListener("click", editTodo);
@@ -17,13 +18,13 @@ Array.from(editBtn).forEach((el) => {
   }
 });
 
+Array.from(saveBtn).forEach((el) => {
+  el.addEventListener("click", saveTodo);
+});
 function saveTodo() {
 
-  const editForm = this.closest(".editForm");
-  const saveBtn = editForm.querySelector(".save");
-  const cancel = editForm.querySelector(".cancel");
-
-  saveBtn = document.querySelector("save").value
+const newText = document.getElementById('editInput').value
+document.querySelector(".todoText").innerText = newText
 }
 
 async function saveTodo(e) {
@@ -37,7 +38,6 @@ async function saveTodo(e) {
       body: JSON.stringify({
         todoIdFromJSFile: todoId,
       }),
-      
     });
     const data = await response.json();
     console.log(data);
@@ -46,7 +46,6 @@ async function saveTodo(e) {
     console.log(err);
   }
 }
-
 
 Array.from(deleteBtn).forEach((el) => {
   el.addEventListener("click", deleteTodo);
@@ -59,8 +58,6 @@ Array.from(todoItem).forEach((el) => {
 Array.from(todoComplete).forEach((el) => {
   el.addEventListener("click", markIncomplete);
 });
-
-
 
 async function editTodo() {
   const todoId = this.parentNode.dataset.id;
@@ -80,8 +77,6 @@ async function editTodo() {
     console.log(err);
   }
 }
-
-
 
 async function deleteTodo() {
   const todoId = this.parentNode.dataset.id;

@@ -7,3 +7,5 @@ function openNewRecipeBook(){
 function closeNewRecipeBook(){
     document.getElementById('search-overlay').style.height = "0%"
 }
+
+

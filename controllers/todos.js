@@ -64,6 +64,7 @@ module.exports = {
       await Todo.findOneAndUpdate({ _id: req.body.todoIdFromJSFile });
       console.log("Saved Todo");
       res.json("Saved It");
+      res.redirect("/saveTodos");
     } catch (err) {
       console.log(err);
     }

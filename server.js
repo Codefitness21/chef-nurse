@@ -30,6 +30,8 @@ app.use('/', homeRoutes)
 app.use('/todos', todoRoutes)
 
 //Navigation
+
+
 app.get('', (req, res)=> {
     res.render('index')
 })
@@ -46,6 +48,9 @@ app.put('/saveTodo', (req, res)=>{
     res.render('todos')
 })
 
+app.put('', (req, res)=> {
+    res.render('index')
+})
 
 //Listening to port 8000
 app.listen(process.env.PORT, ()=> {
