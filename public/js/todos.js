@@ -2,34 +2,39 @@ const deleteBtn = document.querySelectorAll(".del");
 const editBtn = document.querySelectorAll(".edit");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
-const saveBtn = document.querySelectorAll(".save");
+const saveBtn = document.querySelectorAll(".save")
 
+Array.from(deleteBtn).forEach((el) => {
+  el.addEventListener("click", deleteTodo);
+});
+
+Array.from(todoItem).forEach((el) => {
+  el.addEventListener("click", markComplete);
+});
+
+Array.from(todoComplete).forEach((el) => {
+  el.addEventListener("click", markIncomplete);
+});
 
 Array.from(editBtn).forEach((el) => {
-  el.addEventListener("click", editTodo);
-
-  function editTodo() {
+  el.addEventListener("click", function () {
     const todoItem = this.closest(".todoItem");
     const todoText = todoItem.querySelector(".todoText");
     const editForm = todoItem.querySelector(".editForm");
 
     todoText.style.display = "none";
     editForm.style.display = "inline";
-  }
+  });
 });
 
 Array.from(saveBtn).forEach((el) => {
-  el.addEventListener("click", saveTodo);
-});
-function saveTodo() {
+  el.addEventListener("click", function() {
+ const newText = document.getElementById("editInput").value;
+  document.querySelector(".editForm").innerText = newText;
+  })
+})
 
-const newText = document.getElementById('editInput').value
-document.querySelector(".todoText").innerText = newText
-}
-
-async function saveTodo(e) {
-  e.preventDefault();
-
+async function saveTodo() {
   const todoId = this.parentNode.dataset.id;
   try {
     const response = await fetch("todos/saveTodo", {
@@ -47,21 +52,8 @@ async function saveTodo(e) {
   }
 }
 
-Array.from(deleteBtn).forEach((el) => {
-  el.addEventListener("click", deleteTodo);
-});
-
-Array.from(todoItem).forEach((el) => {
-  el.addEventListener("click", markComplete);
-});
-
-Array.from(todoComplete).forEach((el) => {
-  el.addEventListener("click", markIncomplete);
-});
-
 async function editTodo() {
   const todoId = this.parentNode.dataset.id;
-
   try {
     const response = await fetch("todos/editTodo", {
       method: "put",

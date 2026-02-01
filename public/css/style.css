@@ -271,7 +271,9 @@ button {
     flex-direction: row;
     align-self: center;
     gap: 8px;
+    font-size: 1.2em;
     padding: 0;
+    width: 75%;
 }
 
 #editInput {
