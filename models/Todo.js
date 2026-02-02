@@ -10,7 +10,11 @@ const TodoSchema = new mongoose.Schema({
   completed: {
     type: Boolean,
     required: true,
-  }
+  },
+  // saved: {
+  //    type: Boolean,
+  //   required: true,
+  // }
 })
 
 module.exports = mongoose.model('Todo', TodoSchema)

@@ -1,8 +1,9 @@
 const deleteBtn = document.querySelectorAll(".del");
-const editBtn = document.querySelectorAll(".edit");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
-const saveBtn = document.querySelectorAll(".save")
+// const saveBtn = document.querySelectorAll(".save");
+const editBtn = document.querySelectorAll(".edit");
+
 
 Array.from(deleteBtn).forEach((el) => {
   el.addEventListener("click", deleteTodo);
@@ -16,44 +17,41 @@ Array.from(todoComplete).forEach((el) => {
   el.addEventListener("click", markIncomplete);
 });
 
-Array.from(editBtn).forEach((el) => {
-  el.addEventListener("click", function () {
-    const todoItem = this.closest(".todoItem");
-    const todoText = todoItem.querySelector(".todoText");
-    const editForm = todoItem.querySelector(".editForm");
+// Array.from(saveBtn).forEach((el) => {
+//   el.addEventListener("click", saveTodo);
+// });
 
-    todoText.style.display = "none";
-    editForm.style.display = "inline";
-  });
+Array.from(editBtn).forEach((el) => {
+  el.addEventListener("click", editTodo);
 });
 
-Array.from(saveBtn).forEach((el) => {
-  el.addEventListener("click", function() {
- const newText = document.getElementById("editInput").value;
-  document.querySelector(".editForm").innerText = newText;
-  })
-})
-
-async function saveTodo() {
-  const todoId = this.parentNode.dataset.id;
-  try {
-    const response = await fetch("todos/saveTodo", {
-      method: "put",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        todoIdFromJSFile: todoId,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-    location.reload();
-  } catch (err) {
-    console.log(err);
-  }
-}
+// async function saveTodo() {
+//   const newText = document.getElementById("editInput").value;
+//   document.querySelector(".editForm").innerText = newText;
+//   const todoId = this.parentNode.dataset.id;
+//   try {
+//     const response = await fetch("todos/saveTodo", {
+//       method: "put",
+//       headers: { "Content-type": "application/json" },
+//       body: JSON.stringify({
+//         todoIdFromJSFile: todoId,
+//       }),
+//     });
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 async function editTodo() {
   const todoId = this.parentNode.dataset.id;
+  const todoItem = this.closest(".todoItem");
+  const todoText = todoItem.querySelector(".todoText");
+  const editForm = todoItem.querySelector(".editForm");
+
+  todoText.style.display = "none";
+  editForm.style.display = "inline";
   try {
     const response = await fetch("todos/editTodo", {
       method: "put",
@@ -64,7 +62,6 @@ async function editTodo() {
     });
     const data = await response.json();
     console.log(data);
-    location.reload();
   } catch (err) {
     console.log(err);
   }

@@ -13,13 +13,24 @@ module.exports = {
   },
   createTodo: async (req, res) => {
     try {
-      await Todo.create({ todo: req.body.todoItem, completed: false });
+      await Todo.create({ todo: req.body.todoItem, completed: false});
       console.log("Todo has been added!");
       res.redirect("/todos");
     } catch (err) {
       console.log(err);
     }
   },
+
+  //  saveTodo: async (req, res) => {
+  //   try {
+  //     await Todo.findOneAndUpdate({ todo: req.body.todoItem, completed: false, saved: false });
+  //     console.log("Saved It");
+  //     res.redirect("/saveTodos");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
+
   markComplete: async (req, res) => {
     try {
       await Todo.findOneAndUpdate(
@@ -58,17 +69,7 @@ module.exports = {
       console.log(err);
     }
   },
-  saveTodo: async (req, res) => {
-    console.log(req.body.todoIdFromJSFile);
-    try {
-      await Todo.findOneAndUpdate({ _id: req.body.todoIdFromJSFile });
-      console.log("Saved Todo");
-      res.json("Saved It");
-      
-    } catch (err) {
-      console.log(err);
-    }
-  },
+
   editTodo: async (req, res) => {
     console.log(req.body.todoIdFromJSFile);
     try {

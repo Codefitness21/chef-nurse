@@ -44,9 +44,13 @@ app.put('', (req, res)=> {
     res.render('todos')
 })
 
-app.put('/saveTodo', (req, res)=>{
+app.get('/editTodo', (req, res)=>{
     res.render('todos')
 })
+
+// app.get('/saveTodo', (req, res)=>{
+//     res.render('todos')
+// })
 
 app.put('', (req, res)=> {
     res.render('index')

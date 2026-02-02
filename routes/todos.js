@@ -13,7 +13,7 @@ router.put('/markIncomplete', todosController.markIncomplete)
 
 router.delete('/deleteTodo', todosController.deleteTodo)
 
-router.put('/saveTodo', todosController.saveTodo)
+// router.put('/saveTodo', todosController.saveTodo)
 
 router.put('/editTodo', todosController.editTodo) 
 
