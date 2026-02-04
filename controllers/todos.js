@@ -24,17 +24,18 @@ module.exports = {
   saveTodo: async (req, res) => {
     console.log(req.body.todoIdFromJSFile);
     try {
-      await Todo.findOneAndReplace({ _id: req.body.todoIdFromJSFile, saved: false},
+      await Todo.findOneAndUpdate({ _id: req.body.todoIdFromJSFile},
         {
-          saved: true,
-        },
+        todo: req.body.updatedText 
+      },
       );
       console.log("Saved Todo");
-      res.redirect("/saveTodo");
+      res.json("Saved Todo");
     } catch (err) {
       console.log(err);
     }
   },
+
   markComplete: async (req, res) => {
     try {
       await Todo.findOneAndUpdate(

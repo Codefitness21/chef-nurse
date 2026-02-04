@@ -1,7 +1,7 @@
 const deleteBtn = document.querySelectorAll(".del");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
-// const saveBtn = document.querySelectorAll(".save");
+const updateBtn = document.querySelectorAll("#save-btn");
 const editBtn = document.querySelectorAll(".edit");
 
 
@@ -17,16 +17,37 @@ Array.from(todoComplete).forEach((el) => {
   el.addEventListener("click", markIncomplete);
 });
 
-// Array.from(saveBtn).forEach((el) => {
-//   el.addEventListener("click", saveTodo);
-// });
+Array.from(updateBtn).forEach((el) => {
+  el.addEventListener("click", saveTodo);
+});
 
 Array.from(editBtn).forEach((el) => {
   el.addEventListener("click", editTodo);
 });
 
+async function saveTodo() {
+  // const todoId = this.parentNode.dataset.id;
+   const todoItem = this.closest(".todoItem");
+  const todoId = todoItem.dataset.id;
+  const updatedText = todoItem.querySelector(".editInput").value;
+  try {
+    const response = await fetch("/todos/saveTodo", {
+      method: "put",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        todoIdFromJSFile: todoId,
+        updatedText: updatedText,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+     location.reload();
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-async function editTodo() {
+function editTodo() {
   const todoId = this.parentNode.dataset.id;
   const todoItem = this.closest(".todoItem");
   const todoText = todoItem.querySelector(".todoText");
@@ -34,25 +55,25 @@ async function editTodo() {
 
   todoText.style.display = "none";
   editForm.style.display = "inline";
-  try {
-    const response = await fetch("todos/editTodo", {
-      method: "put",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        todoIdFromJSFile: todoId,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
+  // try {
+  //   const response = await fetch("/todos/editTodo", {
+  //     method: "put",
+  //     headers: { "Content-type": "application/json" },
+  //     body: JSON.stringify({
+  //       todoIdFromJSFile: todoId,
+  //     }),
+  //   });
+  //   const data = await response.json();
+  //   console.log(data);
+  // } catch (err) {
+  //   console.log(err);
+  // }
 }
 
 async function deleteTodo() {
   const todoId = this.parentNode.dataset.id;
   try {
-    const response = await fetch("todos/deleteTodo", {
+    const response = await fetch("/todos/deleteTodo", {
       method: "delete",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
@@ -66,24 +87,6 @@ async function deleteTodo() {
     console.log(err);
   }
 }
-
-// async function saveTodo() {
-//   const todoId = this.parentNode.dataset.id;
-//   try {
-//     const response = await fetch("todos/saveTodo", {
-//       method: "put",
-//       headers: { "Content-type": "application/json" },
-//       body: JSON.stringify({
-//         todoIdFromJSFile: todoId,
-//       }),
-//     });
-//     const data = await response.json();
-//     console.log(data);
-//     location.reload();
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
 
 async function markComplete() {
   const todoId = this.parentNode.dataset.id;
