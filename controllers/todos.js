@@ -21,16 +21,20 @@ module.exports = {
     }
   },
 
-  //  saveTodo: async (req, res) => {
-  //   try {
-  //     await Todo.findOneAndUpdate({ todo: req.body.todoItem, completed: false, saved: false });
-  //     console.log("Saved It");
-  //     res.redirect("/saveTodos");
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
-
+  saveTodo: async (req, res) => {
+    console.log(req.body.todoIdFromJSFile);
+    try {
+      await Todo.findOneAndReplace({ _id: req.body.todoIdFromJSFile, saved: false},
+        {
+          saved: true,
+        },
+      );
+      console.log("Saved Todo");
+      res.redirect("/saveTodo");
+    } catch (err) {
+      console.log(err);
+    }
+  },
   markComplete: async (req, res) => {
     try {
       await Todo.findOneAndUpdate(
@@ -45,6 +49,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   markIncomplete: async (req, res) => {
     try {
       await Todo.findOneAndUpdate(
@@ -75,7 +80,6 @@ module.exports = {
     try {
       await Todo.findOneAndUpdate(
         { _id: req.body.todoIdFromJSFile },
-        { todo: req.body.todoItem },
       );
       console.log("Edited Todo");
       res.json("Edited It");

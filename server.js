@@ -44,11 +44,11 @@ app.put('', (req, res)=> {
     res.render('todos')
 })
 
-app.get('/editTodo', (req, res)=>{
-    res.render('todos')
-})
+// app.put('/editTodo', (req, res)=>{
+//     res.render('todos')
+// })
 
-// app.get('/saveTodo', (req, res)=>{
+// app.put('/saveTodo', (req, res)=>{
 //     res.render('todos')
 // })
 

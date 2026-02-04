@@ -30,9 +30,10 @@
                 <li class='todoItem' data-id='<%=el._id%>'>
                     
                     <span class='todoText <%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
+
                     <form class="editForm" action="/todos/editTodo" method='PUT' style="display: none;">
                         <div class="edit-icons">
-                            <input id="editInput" type="text" name='updatedText' value="<%= el.todo %>">
+                            <input class="editInput" type="text" name='updatedText' value="<%= el.todo%>">
 
                             <img class="save" src="/images/square.png" alt="save button">
                             <img class="cancel" src="/images/cancel.png" alt="cancel button">

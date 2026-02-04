@@ -25,24 +25,6 @@ Array.from(editBtn).forEach((el) => {
   el.addEventListener("click", editTodo);
 });
 
-// async function saveTodo() {
-//   const newText = document.getElementById("editInput").value;
-//   document.querySelector(".editForm").innerText = newText;
-//   const todoId = this.parentNode.dataset.id;
-//   try {
-//     const response = await fetch("todos/saveTodo", {
-//       method: "put",
-//       headers: { "Content-type": "application/json" },
-//       body: JSON.stringify({
-//         todoIdFromJSFile: todoId,
-//       }),
-//     });
-//     const data = await response.json();
-//     console.log(data);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
 
 async function editTodo() {
   const todoId = this.parentNode.dataset.id;
@@ -84,6 +66,24 @@ async function deleteTodo() {
     console.log(err);
   }
 }
+
+// async function saveTodo() {
+//   const todoId = this.parentNode.dataset.id;
+//   try {
+//     const response = await fetch("todos/saveTodo", {
+//       method: "put",
+//       headers: { "Content-type": "application/json" },
+//       body: JSON.stringify({
+//         todoIdFromJSFile: todoId,
+//       }),
+//     });
+//     const data = await response.json();
+//     console.log(data);
+//     location.reload();
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 async function markComplete() {
   const todoId = this.parentNode.dataset.id;

@@ -11,10 +11,11 @@ const TodoSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  // saved: {
-  //    type: Boolean,
-  //   required: true,
-  // }
+  saved: {
+     type: String,
+    required: true,
+    default: false,
+  }
 })
 
 module.exports = mongoose.model('Todo', TodoSchema)
