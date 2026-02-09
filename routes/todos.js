@@ -13,8 +13,6 @@ router.put('/markIncomplete', todosController.markIncomplete)
 
 router.put('/saveTodo', todosController.saveTodo)
 
-router.put('/editTodo', todosController.editTodo) 
-
 router.delete('/deleteTodo', todosController.deleteTodo)
 
 module.exports = router

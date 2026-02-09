@@ -1,6 +1,6 @@
 //Mongoose is helping us talk to our database.
 
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const TodoSchema = new mongoose.Schema({
   todo: {
@@ -12,10 +12,11 @@ const TodoSchema = new mongoose.Schema({
     required: true,
   },
   saved: {
-     type: String,
+    type: String,
     required: true,
     default: false,
-  }
-})
+  },
+});
 
-module.exports = mongoose.model('Todo', TodoSchema)
+//model created to interact with database
+module.exports = mongoose.model("Todo", TodoSchema);

@@ -1,3 +1,8 @@
+//Environment Variables
+// const MongoClient = require('mongodb').MongoClient
+require('dotenv').config({path: './config/.env'})
+
+//Dependencies
 //I need to use express so I need to require it
 const express = require('express')
 const app = express()
@@ -7,48 +12,39 @@ const homeRoutes = require('./routes/home')
 const todoRoutes = require('./routes/todos')
 
 
-// const MongoClient = require('mongodb').MongoClient
-require('dotenv').config({path: './config/.env'})
-
-
-connectDB()
-
+//Built in Middleware
 
 //Set Templating Engine
 app.use(expressLayouts)
 app.set('layout', './layout/main-app')
 app.set('view engine', 'ejs')
 
-//Static Files
+//Database Connection
+connectDB()
+
+//static files
 app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/css'))
+// app.use('/css', express.static(__dirname + '/public/css'))
 app.use(express.urlencoded({extended: true}))
+//This middleware reads Content-Type: application/json header and automatically converts the JSON string back into a JS object that you can use.
 app.use(express.json())
 
-//Routes
+//Route Handlers
+//routes
 app.use('/', homeRoutes)
 app.use('/todos', todoRoutes)
 
-//Navigation
-
-
+//navigation
 app.get('', (req, res)=> {
     res.render('index')
 })
 
-app.get('', (req, res)=> {
-    res.render('todos')
+app.put('/index/:id', (req, res)=> {
+    res.redirect('/index')
 })
 
-app.put('', (req, res)=> {
-    res.render('todos')
-})
-
-app.put('', (req, res)=> {
-    res.render('index')
-})
-
-//Listening to port 8000
+//Port
+//listening to port 8000
 app.listen(process.env.PORT, ()=> {
     console.log('listening on 8000')
 })

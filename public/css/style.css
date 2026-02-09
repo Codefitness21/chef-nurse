@@ -82,7 +82,7 @@ body {
 }
 
 /* Search Overlay on Home Page*/
-#search-overlay {
+.search-overlay {
     position: fixed;
     left: 0;
     right: 0;
@@ -91,7 +91,6 @@ body {
     padding: 24px;
     background: #ff0000e6;
     color: #ffffff;
-    overflow-y: hidden;
     transition: 0.5s;
 
     .close-btn {
@@ -108,7 +107,7 @@ body {
 }
 
 /* Browser Overlay on Home Page*/
-#browser-overlay {
+.browser-overlay {
     position: fixed;
     left: 0;
     right: 0;
