@@ -29,21 +29,20 @@ Array.from(cancelBtn).forEach((el) => {
   el.addEventListener("click", cancelTodo);
 });
 
-
 async function cancelTodo() {
-const todoItem = this.closest(".todoItem");
+  const todoItem = this.closest(".todoItem");
   const editInput = todoItem.querySelector(".todoText");
   const editForm = todoItem.querySelector(".editForm");
 
   editInput.style.display = "none";
   editForm.style.display = "inline";
+
   try {
     location.reload();
   } catch (err) {
     console.log(err);
   }
 }
-
 
 async function deleteTodo() {
   const todoId = this.parentNode.dataset.id;
@@ -112,6 +111,7 @@ async function saveTodo() {
   const todoItem = this.closest(".todoItem");
   const todoId = todoItem.dataset.id;
   const updatedText = todoItem.querySelector(".editInput").value;
+ 
   try {
     const response = await fetch("/todos/saveTodo", {
       method: "put",
