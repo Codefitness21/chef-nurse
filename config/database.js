@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 //Defines async function called connectDB taht will handle the database connection
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect('process.env.MONGO_URI', {
+    const conn = await mongoose.connect(process.env.DB_STRING, {
     })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`)
@@ -17,3 +17,4 @@ const connectDB = async () => {
 }
 
 module.exports = connectDB
+console.log("DB_STRING =", process.env.DB_STRING);
