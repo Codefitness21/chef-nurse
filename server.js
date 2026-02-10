@@ -28,6 +28,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 //This middleware reads Content-Type: application/json header and automatically converts the JSON string back into a JS object that you can use.
 app.use(express.json())
+app.use(express.static('dist'));
 
 //Route Handlers
 //routes
