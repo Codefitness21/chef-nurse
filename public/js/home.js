@@ -3,7 +3,7 @@ document.querySelector('.close-btn').addEventListener('click', closeNewRecipeBoo
 document.querySelector('.addBtn').addEventListener('click', openBrowser)
 
 function openNewRecipeBook(){
-    document.querySelector('.search-overlay').style.height = "40%"
+    document.querySelector('.search-overlay').style.height = "50%"
     document.querySelector('.browser-overlay').style.height = "0%"
 }
 
