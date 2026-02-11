@@ -225,9 +225,10 @@ input {
 }
 
 .completed {
-    text-decoration: line-through;
-    color: gray;
+    /* text-decoration: line-through; */
+    /* color: gray; */
     width: 75%;
+    font-size: 1.2em;
 }
 
 .not {
