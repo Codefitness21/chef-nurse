@@ -235,8 +235,8 @@ input {
 }
 
 .grocery-input {
-    height: 20px;
     padding: 8px;
+    border-radius: 4px;
     border-color: #808080;
 }
 
