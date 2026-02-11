@@ -46,7 +46,7 @@ app.put('/index/:id', (req, res)=> {
 //Port
 //listening to port 8000
 app.listen(process.env.PORT, ()=> {
-    console.log('listening on 8000')
+    console.log('listening on 10000')
 })
 
 
