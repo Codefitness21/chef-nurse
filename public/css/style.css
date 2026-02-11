@@ -114,7 +114,7 @@ body {
     bottom: 0;
     height: 0%;
     padding: 24px;
-    background-color: #aabd54;
+    background-color: #aabd5499;
     transition: 0.5s;
 
     .closeBtn {
