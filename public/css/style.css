@@ -154,6 +154,7 @@ body {
 .create-btn {
     margin: 16px;
     font-size: 16px;
+    color: #000000;
     padding: 8px 16px;
     width: 50%;
 }
