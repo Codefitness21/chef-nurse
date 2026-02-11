@@ -30,7 +30,7 @@
 
                 <li class='todoItem' data-id='<%=el._id%>'>
                     
-                    <span class='todoText <%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
+                    <span class='todoText'><%= el.todo %></span>
 
                     <form class="editForm" action="/todos/editTodo" method='PUT' style="display: none;">
                         <div class="edit-icons">

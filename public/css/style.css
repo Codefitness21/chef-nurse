@@ -224,14 +224,19 @@ input {
     border: 2px dashed #000000;
 }
 
-.completed {
-    /* text-decoration: line-through; */
-    /* color: gray; */
+/* .completed {
+    text-decoration: line-through;
+    color: gray;
     width: 75%;
     font-size: 1.2em;
 }
 
 .not {
+    font-size: 1.2em;
+    width: 75%;
+} */
+
+.todoText {
     font-size: 1.2em;
     width: 75%;
 }
