@@ -13,7 +13,7 @@
         <div class="grocery-list">
             <div class="grocery-form">
                 <h1>Grocery List </h1>
-                <h2>Things left to get: <%= left %>
+                <h2>Items to purchase: <%= left %>
                 </h2>
 
                 <form action="/todos/createTodo" method='POST'>
@@ -30,9 +30,9 @@
 
                 <li class='todoItem' data-id='<%=el._id%>'>
                     
-                    <span class='todoText'><%= el.todo %></span>
+                    <span class='todoText <%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
 
-                    <form class="editForm" style="display: none;">
+                    <form class="editForm" action="/todos/editTodo" method='PUT' style="display: none;">
                         <div class="edit-icons">
                             <input class="editInput" type="text" name='updatedText' value="<%= el.todo%>">
 

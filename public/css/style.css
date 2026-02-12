@@ -224,7 +224,7 @@ input {
     border: 2px dashed #000000;
 }
 
-/* .completed {
+.completed {
     text-decoration: line-through;
     color: gray;
     width: 75%;
@@ -234,12 +234,12 @@ input {
 .not {
     font-size: 1.2em;
     width: 75%;
-} */
+}
 
-.todoText {
+/* .todoText {
     font-size: 1.2em;
     width: 75%;
-}
+} */
 
 .grocery-input {
     padding: 8px;

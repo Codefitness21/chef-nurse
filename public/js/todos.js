@@ -100,8 +100,6 @@ async function markIncomplete() {
 
 
 async function editTodo() {
-      
-  
   const todoItem = this.closest(".todoItem");
   const todoText = todoItem.querySelector(".todoText");
   const editForm = todoItem.querySelector(".editForm");
@@ -122,7 +120,6 @@ async function editTodo() {
     });
     const data = await response.json();
     console.log(data);
-   
   } catch (err) {
     console.log(err);
   }
