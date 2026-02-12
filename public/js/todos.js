@@ -98,13 +98,34 @@ async function markIncomplete() {
   }
 }
 
-function editTodo() {
+
+async function editTodo() {
+      
+  
   const todoItem = this.closest(".todoItem");
   const todoText = todoItem.querySelector(".todoText");
   const editForm = todoItem.querySelector(".editForm");
+  const todoId = todoItem.dataset.id;
+  const updatedText = todoItem.querySelector(".editInput").value;
 
   todoText.style.display = "none";
   editForm.style.display = "inline";
+
+   try {
+    const response = await fetch("/todos/editTodo", {
+      method: "put",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        todoIdFromJSFile: todoId,
+        updatedText: updatedText,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+   
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 async function saveTodo() {

@@ -39,6 +39,10 @@ app.get('/', (req, res)=> {
     res.render('index')
 })
 
+app.put('/', (req, res) => {
+    res.render('todos'); 
+});
+
 app.put('/index/:id', (req, res)=> {
     res.redirect('/index')
 })
