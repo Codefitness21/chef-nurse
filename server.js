@@ -35,7 +35,7 @@ app.use('/', homeRoutes)
 app.use('/todos', todoRoutes)
 
 //navigation
-app.get('', (req, res)=> {
+app.get('/', (req, res)=> {
     res.render('index')
 })
 
@@ -44,7 +44,7 @@ app.put('/index/:id', (req, res)=> {
 })
 
 //Port
-//listening to port 8000
+//listening to port 10000
 app.listen(process.env.PORT, ()=> {
     console.log('listening on 10000')
 })
