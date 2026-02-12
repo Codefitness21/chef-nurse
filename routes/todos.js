@@ -7,11 +7,11 @@ router.get('/', todosController.getTodos)
 
 router.post('/createTodo', todosController.createTodo)
 
+router.post('/editTodo', todosController.editTodo)
+
 router.put('/markComplete', todosController.markComplete)
 
 router.put('/markIncomplete', todosController.markIncomplete)
-
-router.put('/editTodo', todosController.editTodo)
 
 router.put('/saveTodo', todosController.saveTodo)
 

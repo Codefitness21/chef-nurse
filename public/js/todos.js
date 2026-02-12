@@ -98,7 +98,6 @@ async function markIncomplete() {
   }
 }
 
-
 async function editTodo() {
   const todoItem = this.closest(".todoItem");
   const todoText = todoItem.querySelector(".todoText");
@@ -111,8 +110,7 @@ async function editTodo() {
 
    try {
     const response = await fetch("/todos/editTodo", {
-      method: "put",
-      headers: { "Content-type": "application/json" },
+     
       body: JSON.stringify({
         todoIdFromJSFile: todoId,
         updatedText: updatedText,
@@ -120,6 +118,7 @@ async function editTodo() {
     });
     const data = await response.json();
     console.log(data);
+    location.reload();
   } catch (err) {
     console.log(err);
   }

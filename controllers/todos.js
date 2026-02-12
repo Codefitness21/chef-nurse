@@ -11,10 +11,26 @@ module.exports = {
       console.log(err);
     }
   },
+
   createTodo: async (req, res) => {
     try {
       await Todo.create({ todo: req.body.todoItem, completed: false});
       console.log("Todo has been added!");
+      res.redirect("/todos");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+   editTodo: async (req, res) => {
+    console.log(req.body.todoIdFromJSFile);
+    try {
+      await Todo.findOneAndUpdate({ _id: req.body.todoIdFromJSFile},
+        {
+        todo: req.body.updatedText 
+      },
+      );
+      console.log("Edited Todo");
       res.redirect("/todos");
     } catch (err) {
       console.log(err);
@@ -61,21 +77,6 @@ module.exports = {
       );
       console.log("Marked Incomplete");
       res.json("Marked Incomplete");
-    } catch (err) {
-      console.log(err);
-    }
-  },
-
-  editTodo: async (req, res) => {
-    console.log(req.body.todoIdFromJSFile);
-    try {
-      await Todo.findOneAndUpdate({ _id: req.body.todoIdFromJSFile},
-        {
-        todo: req.body.updatedText 
-      },
-      );
-      console.log("Edited Todo");
-      res.json("Edited Todo");
     } catch (err) {
       console.log(err);
     }

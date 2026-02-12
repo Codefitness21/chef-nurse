@@ -39,13 +39,13 @@ app.get('/', (req, res)=> {
     res.render('index')
 })
 
-app.put('/', (req, res) => {
-    res.render('todos'); 
-});
-
 app.put('/index/:id', (req, res)=> {
     res.redirect('/index')
 })
+
+app.post('/', (req, res) => {
+    res.redirect('todos'); 
+});
 
 //Port
 //listening to port 10000
