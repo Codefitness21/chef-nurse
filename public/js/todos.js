@@ -109,13 +109,7 @@ async function editTodo() {
   editForm.style.display = "inline";
 
    try {
-    const response = await fetch("/todos/editTodo", {
-     
-      body: JSON.stringify({
-        todoIdFromJSFile: todoId,
-        updatedText: updatedText,
-      }),
-    });
+    
     const data = await response.json();
     console.log(data);
     location.reload();

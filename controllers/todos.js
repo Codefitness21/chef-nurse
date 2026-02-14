@@ -31,7 +31,7 @@ module.exports = {
       },
       );
       console.log("Edited Todo");
-      res.redirect("/todos");
+      res.json("Edited Todo");
     } catch (err) {
       console.log(err);
     }

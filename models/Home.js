@@ -1,10 +1,15 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// const HomeSchema = new mongoose.Schema({
-//     home: {
-//         type: String,
-//         required: true,
-//     },
-// })
+const BookSchema = new mongoose.Schema({
+  home: {
+    type: String,
+    required: true,
+    default: false,
+  },
+  completed: {
+    type: Boolean,
+    required: true,
+  },
+});
 
-// module.exports = mongoose.model("Home", HomeSchema);
+module.exports = mongoose.model("Book", BookSchema);

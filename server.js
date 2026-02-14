@@ -43,8 +43,12 @@ app.put('/index/:id', (req, res)=> {
     res.redirect('/index')
 })
 
+app.get('/todos/:id', (req, res) => {
+    res.render('todos')
+})
+
 app.post('/', (req, res) => {
-    res.redirect('todos'); 
+    res.redirect('/todos'); 
 });
 
 //Port

@@ -29,13 +29,12 @@
             <% todos.forEach( el=> { %>
 
                 <li class='todoItem' data-id='<%=el._id%>'>
-                    
                     <span class='todoText <%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
 
                     <form class="editForm" action="/todos/editTodo" method='POST' style="display: none;">
                         <div class="edit-icons">
                             <input class="editInput" type="text" name='updatedText' value="<%= el.todo%>">
-
+                            <button type="submit" style="display: none;"></button>
                             <img class="save-btn" src="/images/square.png" alt="save button">
                             <img class="cancel-btn" src="/images/cancel.png" alt="cancel button">
                         </div>
@@ -43,12 +42,11 @@
 
                     <span class='edit'> <img src="/images/edit-pencil.png" alt="edit pencil"></span>
                     <span class='del'> <img src="/images/trash-can.png" alt="delete trash can"></span>
-                    
                 </li>
                 <% }) %>
         </ul>
     </div>
-    
+
     <script src="js/todos.js"></script>
 </body>
 
