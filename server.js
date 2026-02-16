@@ -39,16 +39,31 @@ app.get('/', (req, res)=> {
     res.render('index')
 })
 
-app.put('/index/:id', (req, res)=> {
-    res.redirect('/index')
-})
-
-app.get('/todos/:id', (req, res) => {
+//removed :id
+app.get('/todos', (req, res) => {
     res.render('todos')
 })
 
+app.get('/createRecipe', (req, res) => {
+    res.render('index'); 
+});
+
+app.get('/index', (req, res) => {
+    res.render('index')
+})
+
+//removed :id
+app.put('/index', (req, res)=> {
+    res.redirect('index')
+})
+
+//removed slash from todos
 app.post('/', (req, res) => {
-    res.redirect('/todos'); 
+    res.redirect('todos'); 
+});
+
+app.post('/createRecipe', (req, res) => {
+    res.redirect('index'); 
 });
 
 //Port
@@ -56,7 +71,6 @@ app.post('/', (req, res) => {
 app.listen(process.env.PORT, ()=> {
     console.log('listening on 10000')
 })
-
 
 //Here is where I serve up an index.html file page back to the browser. Use the sendFile method provided by res.
 // app.get('/', (req, res) => {
