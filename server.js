@@ -35,7 +35,7 @@ app.use('/', homeRoutes)
 app.use('/todos', todoRoutes)
 
 //navigation
-app.get('/', (req, res)=> {
+app.get('/index', (req, res)=> {
     res.render('index')
 })
 
@@ -44,27 +44,28 @@ app.get('/todos', (req, res) => {
     res.render('todos')
 })
 
-app.get('/createRecipe', (req, res) => {
-    res.render('index'); 
-});
-
-app.get('/index', (req, res) => {
-    res.render('index')
-})
+// app.get('/index', (req, res) => {
+//     res.sendFile('index'); 
+// });
 
 //removed :id
-app.put('/index', (req, res)=> {
-    res.redirect('index')
-})
+// app.put('/index', (req, res)=> {
+//     res.redirect('index')
+// })
 
 //removed slash from todos
-app.post('/', (req, res) => {
+// app.post('/index', (req, res) => {
+//     res.redirect('index'); 
+// });
+
+app.post('/index', (req, res) => {
+    res.redirect('index'); 
+});
+
+app.post('/todos', (req, res) => {
     res.redirect('todos'); 
 });
 
-app.post('/createRecipe', (req, res) => {
-    res.redirect('index'); 
-});
 
 //Port
 //listening to port 10000
