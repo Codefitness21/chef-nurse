@@ -63,13 +63,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 100%;
+    height: 80%;
     min-height: 100vh;
     margin: 216px 0 0 0;
 }
 
 .recipe-categories {
    margin: 20px;
+   height: 43%;
+}
+
+.bookItem {
+    height: 80%;
 }
 
 .search-container {

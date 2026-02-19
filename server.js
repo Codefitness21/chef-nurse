@@ -35,14 +35,26 @@ app.use('/', homeRoutes)
 app.use('/todos', todoRoutes)
 
 //navigation
-app.get('/index', (req, res)=> {
-    res.render('index')
-})
+// app.get('/index', (req, res)=> {
+//     res.render('index')
+// })
 
 //removed :id
-app.get('/todos', (req, res) => {
-    res.render('todos')
-})
+// app.get('/todos', (req, res) => {
+//     res.render('todos')
+// })
+
+app.post('/index', (req, res) => {
+    res.redirect('index'); 
+});
+
+app.post('/todos', (req, res) => {
+    res.redirect('todos'); 
+});
+
+// app.get('/books', (req, res) => {
+//     res.render('books: books')
+// })
 
 // app.get('/index', (req, res) => {
 //     res.sendFile('index'); 
@@ -58,13 +70,7 @@ app.get('/todos', (req, res) => {
 //     res.redirect('index'); 
 // });
 
-app.post('/index', (req, res) => {
-    res.redirect('index'); 
-});
 
-app.post('/todos', (req, res) => {
-    res.redirect('todos'); 
-});
 
 
 //Port

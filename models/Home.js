@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
 const BookSchema = new mongoose.Schema({
-  home: {
+  books: {
     type: String,
     required: true,
-    default: false,
   },
   completed: {
     type: Boolean,

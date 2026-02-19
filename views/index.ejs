@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <div class="recipe-container">
-    <div class="search-container">
-        <div class="search-field">
-            <h1>Recipes</h1>
-            <h2>Add Your Favorite Recipes Below: </h2>
-            <form action="/index/createRecipe" method='POST'>
-                <input class="search-input" type="text" placeholder="Search for recipes..." name="search">
-            </form>
+        <div class="search-container">
+            <div class="search-field">
+                <h1>Recipes</h1>
+                <h2>Add Your Favorite Recipes Below: </h2>
+                <form action="/index/createRecipe" method='POST'>
+                    <input class="search-input" type="text" placeholder="Search for recipes..." name="search">
+                </form>
+
+            </div>
+        </div>
+<div class="test">
+        <div class="recipe-book-container">
+            <div class="recipe-categories">
+                <img class="add-recipe-btn" src="/images/add-recipe-book-btn.png" alt="recipe add icon">
+                <h4>New Recipe Book</h4>
+            </div>
+
+            
+            <% books.forEach( el=> { %>
+                <p class='bookItem' data-id='<%=el._id%>' >
+                    <span class='del'> <img src="/images/trash-can.png" alt="delete trash can"></span>
+                    <span>
+                        <%= el.books %>
+                    </span>
+                    <% }) %>
             
         </div>
     </div>
-
-   <div class="recipe-book-container">
-        <div class="recipe-categories">
-            <img class="add-recipe-btn" src="/images/add-recipe-book-btn.png" alt="recipe add icon">
-            <h4>New Recipe Book</h4>
-        </div>
-
-       
-        
+        <%- include('books') %>
+            <%- include('browser') %>
     </div>
-     <%- include('books') %>
-     <%- include('browser') %>
-    </div>
-   
+
 </body>
+
 </html>
