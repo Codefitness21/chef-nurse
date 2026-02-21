@@ -43,7 +43,7 @@ h5 {
 }
 
 
-/*Body*/
+/* Body */
 body {
     display: flex;
     flex-direction: column;
@@ -53,30 +53,7 @@ body {
     padding: 0;
 }
 
-/* Home Page*/
-
-.recipe-book-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-    background-image: url('/images/kitchen-bkgrd.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 80%;
-    min-height: 100vh;
-    margin: 216px 0 0 0;
-}
-
-.recipe-categories {
-   margin: 20px;
-   height: 43%;
-}
-
-.bookItem {
-    height: 80%;
-}
-
+/* Search */
 .search-container {
     position: fixed;
     background-color: #ffffff;
@@ -89,6 +66,67 @@ body {
     margin: 72px 16px 0 16px;
 }
 
+/* Home Page*/
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    margin: 16px;
+    padding: 0 0 500px 0;
+}
+
+.recipe-book-container {
+    background-image: url('/images/kitchen-bkgrd.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+     margin: 216px 0 0 0;
+}
+
+.recipe-categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-edit {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+}
+
+.book-edit img {
+    width: 24px;
+}
+
+#checkboxid {
+   display: flex;
+   flex-direction: row;
+   align-self: flex-end;
+   width: 16%;
+}
+
+.edit-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 10%;
+    }
+}
+
+li.bookItem::before {
+content: " ";
+}
 /* Search Overlay on Home Page*/
 .search-overlay {
     position: fixed;
@@ -229,10 +267,19 @@ input {
 }
 
 .add-recipe-btn {
-    width: 50%;
-    margin: 42px 0 0 0;
+    width: 32%;
+    margin: 42px 0 20px 0;
     padding: 10px;
     border: 2px dashed #000000;
+}
+
+.recipe-folder {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 65%;
+    padding: 10px;
 }
 
 .completed {

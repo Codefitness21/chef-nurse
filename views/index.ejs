@@ -20,24 +20,36 @@
 
             </div>
         </div>
-<div class="test">
+
         <div class="recipe-book-container">
             <div class="recipe-categories">
                 <img class="add-recipe-btn" src="/images/add-recipe-book-btn.png" alt="recipe add icon">
                 <h4>New Recipe Book</h4>
             </div>
 
-            
-            <% books.forEach( el=> { %>
-                <p class='bookItem' data-id='<%=el._id%>' >
-                    <span class='del'> <img src="/images/trash-can.png" alt="delete trash can"></span>
-                    <span>
-                        <%= el.books %>
-                    </span>
+            <div class="book-list">
+                <% books.forEach( el=> { %>
+                    <li class='bookItem' data-id='<%=el._id%>'>
+                        <span class='del'>  <img src="/images/edit-pencil.png" alt="edit pencil"><input
+                                class="checkbox-input" type="checkbox" id="checkboxid" name="checkboxname"><img src="/images/trash-can.png" alt="delete trash can"
+                                style="display: none;"></span>
+                        <img class="recipe-folder" src="/images/recipe-folder.png" alt="recipe folder" >
+                        <span class="book-edit">
+
+                            <%= el.books %>
+                                <form class="editForm" action="/todos/editTodo" method='POST' style="display: none;">
+                                    <div class="edit-icons">
+                                        <input class="editInput" type="text" name='updatedText' value="<%= el.todo%>">
+                                        <button type="submit" style="display: none;"></button>
+                                        <img class="save-btn" src="/images/square.png" alt="save button">
+                                        <img class="cancel-btn" src="/images/cancel.png" alt="cancel button">
+                                    </div>
+                                </form>
+                        </span>
+                    </li>
                     <% }) %>
-            
+            </div>
         </div>
-    </div>
         <%- include('books') %>
             <%- include('browser') %>
     </div>

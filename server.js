@@ -46,9 +46,6 @@ app.use('/todos', todoRoutes)
 //     res.render('todos')
 // })
 
-app.get('/create-recipe-page', (req, res) => {
-    res.render('createRecipe', { message: 'Enter a folder name:' });
-});
 
 app.post('/index', (req, res) => {
     res.redirect('index'); 
