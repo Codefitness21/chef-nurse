@@ -2,8 +2,12 @@ const Book = require("../models/Home");
 
 module.exports = {
   getIndex: async (req, res) => {
+    try {
     const books = await Book.find();
-    res.render('index.ejs', {books: books})
+    res.render('index.ejs', {books: books});
+  } catch (err) {
+    console.log(err)
+  }
   },
 
   getRecipe: async (req, res) => {

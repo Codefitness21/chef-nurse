@@ -5,6 +5,8 @@ require('dotenv').config({path: './config/.env'})
 //Dependencies
 //I need to use express so I need to require it
 const express = require('express')
+const fs = require('fs');
+const path = require('path');
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const connectDB = require('./config/database')
@@ -44,6 +46,10 @@ app.use('/todos', todoRoutes)
 //     res.render('todos')
 // })
 
+app.get('/create-recipe-page', (req, res) => {
+    res.render('createRecipe', { message: 'Enter a folder name:' });
+});
+
 app.post('/index', (req, res) => {
     res.redirect('index'); 
 });
@@ -51,10 +57,6 @@ app.post('/index', (req, res) => {
 app.post('/todos', (req, res) => {
     res.redirect('todos'); 
 });
-
-// app.get('/books', (req, res) => {
-//     res.render('books: books')
-// })
 
 // app.get('/index', (req, res) => {
 //     res.sendFile('index'); 
@@ -69,9 +71,6 @@ app.post('/todos', (req, res) => {
 // app.post('/index', (req, res) => {
 //     res.redirect('index'); 
 // });
-
-
-
 
 //Port
 //listening to port 10000
