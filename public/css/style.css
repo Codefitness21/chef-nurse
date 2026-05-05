@@ -110,7 +110,7 @@ body {
    display: flex;
    flex-direction: row;
    align-self: flex-end;
-   width: 16%;
+   width: 32%;
 }
 
 .edit-icons {
@@ -403,4 +403,40 @@ footer {
     .add-btn {
         width: 30%;
     }
+}
+
+@media (min-width: 1024px) {
+    .logo-img {
+    width: 8%;
+}
+
+.add-recipe-btn {
+    width: 18%;
+}
+
+.recipe-folder {
+    width: 42%;
+}
+
+.del img {
+    width: 24px;
+}
+.book-edit {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.edit-icons {
+    img {
+        width: 10%;
+    }
+}
+footer {
+    img {
+        width: 8%;
+    }
+}
+ .save-btn {
+    width: 3%;
+ }
 }

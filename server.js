@@ -36,17 +36,6 @@ app.use(express.json())
 app.use('/', homeRoutes)
 app.use('/todos', todoRoutes)
 
-//navigation
-// app.get('/index', (req, res)=> {
-//     res.render('index')
-// })
-
-//removed :id
-// app.get('/todos', (req, res) => {
-//     res.render('todos')
-// })
-
-
 app.post('/index', (req, res) => {
     res.redirect('index'); 
 });
@@ -54,20 +43,6 @@ app.post('/index', (req, res) => {
 app.post('/todos', (req, res) => {
     res.redirect('todos'); 
 });
-
-// app.get('/index', (req, res) => {
-//     res.sendFile('index'); 
-// });
-
-//removed :id
-// app.put('/index', (req, res)=> {
-//     res.redirect('index')
-// })
-
-//removed slash from todos
-// app.post('/index', (req, res) => {
-//     res.redirect('index'); 
-// });
 
 //Port
 //listening to port 10000
