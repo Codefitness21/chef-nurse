@@ -1,55 +1,56 @@
 //Environment Variables
 // const MongoClient = require('mongodb').MongoClient
-require("dotenv").config({ path: "./config/.env" });
+require('dotenv').config({path: './config/.env'})
 
 //Dependencies
 //I need to use express so I need to require it
-const express = require("express");
-const fs = require("fs");
-const path = require("path");
-const app = express();
-const expressLayouts = require("express-ejs-layouts");
-const connectDB = require("./config/database");
-const homeRoutes = require("./routes/home");
-const todoRoutes = require("./routes/todos");
+const express = require('express')
+const fs = require('fs');
+const path = require('path');
+const app = express()
+const expressLayouts = require('express-ejs-layouts')
+const connectDB = require('./config/database')
+const homeRoutes = require('./routes/home')
+const todoRoutes = require('./routes/todos')
+
 
 //Built in Middleware
 
 //Set Templating Engine
-app.use(expressLayouts);
-app.set("layout", "./layout/main-app");
-app.set("view engine", "ejs");
+app.use(expressLayouts)
+app.set('layout', './layout/main-app')
+app.set('view engine', 'ejs')
 
 //Database Connection
-connectDB();
+connectDB()
 
 //static files
-app.use(express.static("public"));
+app.use(express.static('public'))
 // app.use('/css', express.static(__dirname + '/public/css'))
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}))
 //This middleware reads Content-Type: application/json header and automatically converts the JSON string back into a JS object that you can use.
-app.use(express.json());
+app.use(express.json())
 
 //Route Handlers
 //routes
-app.use("/", homeRoutes);
-app.use("/todos", todoRoutes);
+app.use('/', homeRoutes)
+app.use('/todos', todoRoutes)
 
-app.post("/index", (req, res) => {
-  res.redirect("index");
+app.post('/index', (req, res) => {
+    res.redirect('index'); 
 });
 
-app.post("/todos", (req, res) => {
-  res.redirect("todos");
+app.post('/todos', (req, res) => {
+    res.redirect('todos'); 
 });
 
 //Port
 //listening to port 10000
-app.listen(process.env.PORT, () => {
-  console.log("listening on 10000");
-});
+app.listen(process.env.PORT, ()=> {
+    console.log('listening on 10000')
+})
 
 //Here is where I serve up an index.html file page back to the browser. Use the sendFile method provided by res.
 // app.get('/', (req, res) => {
 //     res.sendFile(__dirname + '/index.html')
-// })
+// }) 
