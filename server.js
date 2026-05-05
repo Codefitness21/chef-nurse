@@ -1,7 +1,7 @@
 //Environment Variables
 // const MongoClient = require('mongodb').MongoClient
 require("dotenv").config({ path: "./config/.env" });
-
+require('./common')
 //Dependencies
 //I need to use express so I need to require it
 const express = require("express");
