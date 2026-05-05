@@ -456,3 +456,16 @@ footer {
         }
     }
 }
+
+@media (min-width: 481px) and (max-width: 1023px){
+    .logo-img {
+        width: 8%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        width: 13%;
+    }
+}
+
