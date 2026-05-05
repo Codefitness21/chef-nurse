@@ -426,11 +426,14 @@ footer {
     align-items: center;
     width: 50%;
 }
-.edit-icons {
+.book-edit{
+    .edit-icons {
     img {
         width: 10%;
     }
 }
+}
+
 footer {
     img {
         width: 8%;
