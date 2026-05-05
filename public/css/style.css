@@ -436,7 +436,14 @@ footer {
         width: 8%;
     }
 }
+.edit-icons {
  .save-btn {
     width: 3%;
  }
+}
+.edit-icons {
+ .cancel-btn {
+    width: 3%;
+ }
+}
 }
